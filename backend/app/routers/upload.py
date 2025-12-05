@@ -4,7 +4,7 @@ import os,re
 router = APIRouter()
 @router.post("/upload")
 async def upload_pdf(file:UploadFile=File(...)):
-    os.makedirs("uploads", exist_ok=True)
+    os.makedirs("temp", exist_ok=True)
     safe_name = re.sub(r"[^a-zA-Z0-9_.-]", "_", file.filename)
     path = f"temp/{safe_name}"
     file.file.seek(0)
