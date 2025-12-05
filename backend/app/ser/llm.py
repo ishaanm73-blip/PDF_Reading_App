@@ -1,8 +1,8 @@
 import google.generativeai as genai
 import os
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-1.5-flash")
+genai.configure(api_key=os.getenv("AIzaSyAR8RNXS6MBbGhEAOrGmptcKkCXoQF7mmw"))
+model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
 def answer(question, context):
     prompt = f"Context:\n{context}\n\nQuestion: {question}\n\nAnswer:"

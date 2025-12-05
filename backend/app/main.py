@@ -6,4 +6,4 @@ app = FastAPI()
 def health():
     return{"status":"ok"}
 app.include_router(upload_router, prefix="/api")
-app.include_router(ask_router,prefix="api")
+app.include_router(ask_router,prefix="/api")
