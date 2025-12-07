@@ -5,6 +5,10 @@ import os
 DB_PATH = "chroma_store"
 os.makedirs(DB_PATH, exist_ok=True)
 client = chromadb.PersistentClient(path=DB_PATH)
+try:
+    client.delete_collection("documents")
+except Exception as e:
+    print("Collection not found or cannot delete:", e)
 collection = client.get_or_create_collection(name="documents")
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
