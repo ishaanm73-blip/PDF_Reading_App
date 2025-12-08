@@ -3,7 +3,7 @@ from backend.app.ser.embeddings import client
 
 router = APIRouter()
 
-@router.get("/reset")
+@router.post("/reset")
 def reset_collection():
     try:
         client.delete_collection("documents")
